@@ -267,14 +267,14 @@
         <button class="btn-nav" onclick="nextSlide()">
           Selanjutnya &#10095;
         </button>
-        <!-- <button class="btn-nav" onclick="toggleMusic()">🔊 Lagu</button> -->
+        <button class="btn-nav" onclick="toggleMusic()">🔊 Lagu</button>
       </div>
     </div>
 
     <footer>🎈 Dibuat khusus untuk orang paling spesial di dunia ini 💘</footer>
 
     <!-- Audio -->
-    <audio id="bgMusic" autoplay loop>
+    <audio id="bgMusic">
       <source src="asset/hbd.mp3" type="audio/mpeg" />
       Browser tidak mendukung audio.
     </audio>
@@ -348,6 +348,16 @@
       }
 
       drawConfetti();
+
+      let music = document.getElementById("bgMusic");
+
+      function toggleMusic() {
+        if (music.paused) {
+          music.play();
+        } else {
+          music.pause();
+        }
+      }
     </script>
   </body>
 </html>
